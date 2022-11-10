@@ -6,10 +6,10 @@ from django.conf import settings
 from django.forms.widgets import Media
 from django.utils.safestring import mark_safe
 
-if DJANGO_VERSION[0] == 2:
-    from django.urls import reverse
-elif DJANGO_VERSION[0] == 1:
+if DJANGO_VERSION[0] == 1:
     from django.core.urlresolvers import reverse
+else:
+    from django.urls import reverse
 
 
 register = template.Library()
